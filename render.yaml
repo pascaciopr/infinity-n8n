@@ -9,14 +9,14 @@
 
 services:
   - type: web
-    plan: free
+    plan: pro
     # This is the runtime for services that pull a prebuilt Docker image
     runtime: image
     # You can give the service any name
     name: n8n-infinity
     image:
       # Pulls the n8n image tagged as latest from Docker Hub
-      url: docker.io/n8nio/n8n:latest
+      url: docker.io/n8nio/n8n:1.104.1
 
     # All environment variables defined below are required!
     #
@@ -54,7 +54,8 @@ services:
 
 databases:
   - name: n8n-db
-    plan: free
+    plan: basic
+    diskSizeGB: 10
     # The free instance type is limited to 1 GB of disk
     # space.
     #
